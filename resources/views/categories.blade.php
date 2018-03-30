@@ -2,15 +2,68 @@
 @extends('layouts.master')
 
 @section('content')
-        
-        <ul>
-            @foreach($categorie as $categorie)
-            <li>
-                <h3>{{ $categorie->id }}</h3>
-                <h3>{{ $categorie->titre }}</h3>
-                <div> {{ $categorie->image }}</div>
-            </li>
-            @endforeach
-        </ul>
-        
+<html lang="{{ app()->getLocale() }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>NightShop en ligne</title>
+
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+
+        <!-- Styles -->
+        <style>
+            html, body {
+                background-color: #fff;
+                color: #636b6f;
+                font-family: 'Raleway', sans-serif;
+                font-weight: 100;
+                height: 100vh;
+                margin: auto;
+                
+            }
+
+            .full-height {
+                height: 100vh;
+            }
+
+            .flex-center {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
+
+            .position-ref {
+                position: relative;
+            }
+
+            .top-right {
+                position: absolute;
+                right: 10px;
+                top: 18px;
+            }
+
+            .content {
+                text-align: center;
+            }
+
+            .title {
+                font-size: 84px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <ul>
+                @foreach($categorie as $categorie)
+                <li>
+                    <img src="{{ $categorie->image }}" width="200" height="200" >
+                    <h3>{{ $categorie->titre }}</h3>
+                </li>
+                @endforeach
+            </ul>
+        </div>
+        </body>
 @endsection
